@@ -1,0 +1,129 @@
+#!markdown
+
+# Arrays (C# Programming Guide)
+
+You can store multiple variables of the same type in an array data structure. You declare an array by specifying the type of its elements. If you want the array to store elements of any type, you can specify object as its type. In the unified type system of C#, all types, predefined and user-defined, reference types and value types, inherit directly or indirectly from Object.
+
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/
+
+#!csharp
+
+using static System.Console;
+
+#!markdown
+
+## Creating an array
+
+#!csharp
+
+int[] data = new int[5];
+
+#!markdown
+
+## Add elements to the array
+
+#!csharp
+
+data[0] = 1;
+data[1] = 2;
+data[2] = 3;
+
+#!markdown
+
+## Access array elements
+
+#!csharp
+
+Console.WriteLine(data[0]);
+Console.WriteLine(data[1]);
+Console.WriteLine(data[2]);
+Console.WriteLine(data[3]);
+Console.WriteLine(data[4]);
+
+#!markdown
+
+## Modify array element
+
+#!csharp
+
+// Changing the first element to 10
+data[0] = 10;
+Console.WriteLine(data[0]);
+
+#!markdown
+
+## Display array using for loop
+
+#!csharp
+
+for(int i = 0; i < data.Length; i++)
+{
+    Console.WriteLine(data[i]);
+}
+
+#!markdown
+
+## Display array using foreach loop
+
+#!csharp
+
+foreach(var i in data)
+{
+    Console.WriteLine(i);
+}
+
+#!markdown
+
+## Declaring and array with values
+Here we are creating an array with five elements.
+
+#!csharp
+
+int[] data = new int[]{1, 2, 3, 4, 5};
+foreach(var i in data)
+{
+    Console.WriteLine(i);
+}
+
+#!markdown
+
+We can even use the array initializer syntax directly to create an array.
+
+#!csharp
+
+var data = new []{1, 2, 3, 4, 5};
+foreach(var i in data)
+{
+    Console.WriteLine(i);
+}
+
+#!markdown
+
+## Using different datatypes in an array
+
+#!csharp
+
+var data = new object[]{1, 2.0, "Three", true};
+foreach(var i in data)
+{
+    Console.WriteLine(i);
+}
+
+#!markdown
+
+## Reading values form console
+
+#!csharp
+
+var data = new int[5];
+for(int i = 0; i < data.Length; i++)
+{
+    Console.WriteLine($"Enter the value for {i}");
+    data[i] = Convert.ToInt32(Console.ReadLine());
+}
+
+// Displaying the data in the array
+for(int i = 0; i < data.Length; i++)
+{
+    Console.WriteLine($"The value of {i} is {data[i]}");
+}

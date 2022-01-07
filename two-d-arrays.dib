@@ -1,0 +1,145 @@
+#!markdown
+
+# Multidimensional Arrays (C# Programming Guide)
+
+Arrays can have more than one dimension. 
+
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/multidimensional-arrays
+
+#!csharp
+
+using static System.Console;
+
+#!markdown
+
+## Creating a 2D array
+The following declaration creates a two-dimensional array of two rows and two columns.
+
+#!csharp
+
+int[,] data = new int[2, 2];
+
+#!markdown
+
+## Add elements to the array
+
+#!csharp
+
+data[0, 0] = 1;
+data[0, 1] = 2;
+data[1, 0] = 3;
+
+#!markdown
+
+## Access array elements
+
+#!csharp
+
+Console.WriteLine(data[0, 0]);
+Console.WriteLine(data[0, 1]);
+Console.WriteLine(data[1, 0]);
+Console.WriteLine(data[1, 1]);
+
+#!markdown
+
+## Modify array element
+
+#!csharp
+
+// Changing the first element to 10
+data[0, 0] = 10;
+Console.WriteLine(data[0, 0]);
+
+#!markdown
+
+## Display array using for loop
+
+#!csharp
+
+for(int r = 0; r < 2; r++)
+{
+    for(int c = 0; c < 2; c++)
+    {
+        Console.WriteLine(data[r, c]);
+    }
+}
+
+#!markdown
+
+## Display array using foreach loop
+
+#!csharp
+
+foreach(var i in data)
+{
+    Console.WriteLine(i);
+}
+
+#!markdown
+
+## Declaring and array with values
+Here we are creating an array with five elements.
+
+#!csharp
+
+int[,] data = new int[,]{
+    {1, 2},
+    {3, 4}
+};
+foreach(var i in data)
+{
+    Console.WriteLine(i);
+}
+
+#!markdown
+
+We can even use the array initializer syntax directly to create an array.
+
+#!csharp
+
+var data = new[,]{
+    {1, 2},
+    {3, 4}
+};
+foreach(var i in data)
+{
+    Console.WriteLine(i);
+}
+
+#!markdown
+
+## Using different datatypes in an array
+
+#!csharp
+
+var data = new object[3, 2]{
+    {1, 2},
+    {3.0, 4.4},
+    {true, false}
+};
+foreach(var i in data)
+{
+    Console.WriteLine(i);
+}
+
+#!markdown
+
+## Reading values form console
+
+#!csharp
+
+var data = new int[2, 2];
+for(int i = 0; i < 2; i++)
+{
+    for(int j = 0; j < 2; j++)
+    {
+        Console.WriteLine($"Enter the value for {i}:{j}");
+        data[i, j] = Convert.ToInt32(Console.ReadLine());
+    }
+}
+
+// Displaying the data in the array
+foreach(var i in data)
+{
+    Console.WriteLine(i);
+}
