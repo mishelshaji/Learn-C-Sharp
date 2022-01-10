@@ -1,0 +1,31 @@
+#!markdown
+
+# 2D Array
+
+#!csharp
+
+Console.Write("Enter the row count: ");
+var row = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Enter the column count: ");
+var col = Convert.ToInt32(Console.ReadLine());
+
+var data = new int[row, col];
+for (int i = 0; i < row; i++)
+{
+    for(int j = 0; j < col; j++)
+    {
+        Console.Write($"Enter the value for {i}:{j}: ");
+        data[i,j] = Convert.ToInt32(Console.ReadLine());
+    }
+}
+
+Console.WriteLine("Displaying the data");
+for (int i = 0; i < row; i++)
+{
+    for (int j = 0; j < col; j++)
+    {
+        Console.Write($"{data[i, j]} ");
+    }
+    Console.WriteLine();
+}

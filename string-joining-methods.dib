@@ -1,0 +1,77 @@
+#!markdown
+
+In C#, we have six different ways to join strings.
+- Plus Operator
+- Interpolation
+- String format
+- Concatination
+- String Join
+- String Builder Append
+
+#!markdown
+
+# Plus Operator
+
+#!csharp
+
+var firstName = "John";
+var lastName = "Doe";
+var fullName = firstName + " " + lastName;
+Console.WriteLine(fullName);
+
+#!markdown
+
+# Interpolation
+
+#!csharp
+
+var firstName = "John";
+var lastName = "Doe";
+var fullName = $"{firstName} {lastName}";
+Console.WriteLine(fullName);
+
+#!markdown
+
+# String Format
+
+#!csharp
+
+var firstName = "John";
+var lastName = "Doe";
+var fullName = string.Format("{0} {1}", firstName, lastName);
+Console.WriteLine(fullName);
+
+#!markdown
+
+# String Concat
+
+#!csharp
+
+var firstName = "John";
+var lastName = "Doe";
+var fullName = string.Concat(firstName, " ", lastName);
+Console.WriteLine(fullName);
+
+#!markdown
+
+# String Join
+
+#!csharp
+
+var firstName = "John";
+var lastName = "Doe";
+var fullName = string.Join(" ", firstName, lastName);
+Console.WriteLine(fullName);
+
+#!markdown
+
+# String Builder Append
+
+#!csharp
+
+var builder = new StringBuilder();
+builder.Append("John");
+builder.Append(" ");
+builder.Append("Doe");
+var fullName = builder.ToString();
+Console.WriteLine(fullName);
